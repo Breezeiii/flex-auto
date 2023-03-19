@@ -1,0 +1,30 @@
+$justify: (flex-start, flex-end, center, space-between, space-around);
+@for $item from 1 through length($justify) {
+  .justify-#{nth($justify ,$item)} {
+    justify-content: nth($justify, $item);
+  }
+}
+
+$align-content: (
+  stretch,
+  center,
+  flex-start,
+  flex-end,
+  space-between,
+  space-around
+);
+@for $item from 1 through length($align-content) {
+  .align-content-#{nth($align-content ,$item)} {
+    align-content: nth($align-content, $item);
+  }
+}
+
+$align: (stretch, center, flex-start, flex-end, baseline);
+@for $item from 1 through length($align) {
+  .align-#{nth($align ,$item)} {
+    align-items: nth($align, $item);
+  }
+  .align-self-#{nth($align ,$item)} {
+    align-self: nth($align, $item);
+  }
+}

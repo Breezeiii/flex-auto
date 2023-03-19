@@ -15,8 +15,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "lib/index.js"),
-      name: "flexible-box",
-      fileName: "flexible-box"
+      name: "flexiblay",
+      fileName: "flexiblay"
     },
     rollupOptions: {
       external: ["vue"],

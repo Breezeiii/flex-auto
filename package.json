@@ -1,6 +1,6 @@
 {
-  "name": "flexible-box",
-  "version": "1.1.8",
+  "name": "flexiblay",
+  "version": "1.0.0",
   "type": "module",
   "description": "Vue3 + Css3 简易的数字动效组件，让数字跑起来吧，比德芙更丝滑",
   "keywords": [
@@ -12,10 +12,10 @@
     "数字动画"
   ],
   "author": "Breezeiii",
-  "homepage": "https://breezeiii.github.io/flexible-box/#/",
-  "repository": "https://github.com/Breezeiii/flexible-box.git",
+  "homepage": "https://breezeiii.github.io/flexiblay/#/",
+  "repository": "https://github.com/Breezeiii/flexiblay.git",
   "bugs": {
-    "url": "https://github.com/Breezeiii/flexible-box/issues",
+    "url": "https://github.com/Breezeiii/flexiblay/issues",
     "email": "breezeiii@qq.com"
   },
   "license": "MIT",
@@ -23,12 +23,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/flexible-box.umd.cjs",
-  "module": "./dist/flexible-box.js",
+  "main": "./dist/flexiblay.umd.cjs",
+  "module": "./dist/flexiblay.js",
   "exports": {
     ".": {
-      "import": "./dist/flexible-box.js",
-      "require": "./dist/flexible-box.umd.cjs"
+      "import": "./dist/flexiblay.js",
+      "require": "./dist/flexiblay.umd.cjs"
     }
   },
   "scripts": {
@@ -39,7 +39,8 @@
   },
   "dependencies": {
     "numeral": "^2.0.6",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",

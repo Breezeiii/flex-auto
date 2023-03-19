@@ -16,5 +16,6 @@ export default ({ mode }) =>
         "@": "/src",
         "@lib": "/lib"
       }
-    }
+    },
+    server: { host: true }
   });
