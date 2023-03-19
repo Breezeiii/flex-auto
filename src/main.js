@@ -1,15 +1,8 @@
-import Vue from "vue";
+import { createApp } from "vue";
+import "./style.css";
 import App from "./App.vue";
-import router from "./router";
-import store from "./store";
 
-Vue.config.productionTip = false;
+import FlexibleBox from "@lib";
+// import "/dist/style.css";
 
-import flexAuto from "./components/flex-auto";
-Vue.use(flexAuto);
-
-new Vue({
-  router,
-  store,
-  render: (h) => h(App),
-}).$mount("#app");
+createApp(App).use(FlexibleBox).mount("#app");

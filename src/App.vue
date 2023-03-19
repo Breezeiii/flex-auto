@@ -1,28 +1,25 @@
 <template>
-  <div id="app">
-    <router-view />
-  </div>
+  <h3>row</h3>
+  <flex justify="space-between">
+    <flex :span="1">1</flex>
+    <flex :span="2">2</flex>
+    <flex :span="1">3</flex>
+  </flex>
+  <br />
+  <h3>column</h3>
+  <flex direction="column-reverse">
+    <flex :span="1">1</flex>
+    <flex :span="2">2</flex>
+    <flex :span="1">3</flex>
+  </flex>
+  <h3>justify="space-between"</h3>
+  <flex justify="space-between" align="center" wrap="wrap">
+    <flex>1</flex>
+    <flex>2</flex>
+    <flex>3</flex>
+  </flex>
 </template>
 
-<style lang="scss">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<script setup></script>
 
-html,
-body,
-#app {
-  width: 100%;
-  height: 100%;
-}
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-</style>
+<style scoped lang="scss"></style>
