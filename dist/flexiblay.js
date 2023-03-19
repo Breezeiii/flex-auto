@@ -1,5 +1,5 @@
 import { defineComponent as s, toRef as y, provide as m, computed as u, openBlock as i, createElementBlock as c, normalizeClass as r, normalizeStyle as S, unref as o, renderSlot as f, inject as $, createTextVNode as v, toDisplayString as x } from "vue";
-const g = (t, e) => {
+const d = (t, e) => {
   const n = t.__vccOpts || t;
   for (const [l, a] of e)
     n[l] = a;
@@ -20,7 +20,7 @@ const g = (t, e) => {
         marginRight: `-${n.value / 2}px`
       }
     );
-    return (a, d) => (i(), c("div", {
+    return (a, g) => (i(), c("div", {
       class: r({
         ["lay-row"]: !0,
         [`justify-${t.justify}`]: t.justify,
@@ -32,7 +32,7 @@ const g = (t, e) => {
       f(a.$slots, "default", {}, void 0, !0)
     ], 6));
   }
-}), N = /* @__PURE__ */ g(h, [["__scopeId", "data-v-5fb24b3e"]]);
+}), N = /* @__PURE__ */ d(h, [["__scopeId", "data-v-6165caad"]]);
 const j = s({ name: "LayCol" }), C = /* @__PURE__ */ Object.assign(j, {
   props: {
     span: { type: [Number, String], default: null },
@@ -67,7 +67,7 @@ const j = s({ name: "LayCol" }), C = /* @__PURE__ */ Object.assign(j, {
         t.pull && `lay-col-pull-${t.pull}`,
         t.push && `lay-col-push-${t.push}`,
         t.order && `lay-col-order-${t.order}`,
-        t.align && `align-${t.align}`
+        t.align && `align-self-${t.align}`
       ]),
       style: S(o(n))
     }, [
@@ -75,7 +75,7 @@ const j = s({ name: "LayCol" }), C = /* @__PURE__ */ Object.assign(j, {
       v(" " + x(o(e)), 1)
     ], 6));
   }
-}), L = /* @__PURE__ */ g(C, [["__scopeId", "data-v-36399233"]]), w = [N, L];
+}), L = /* @__PURE__ */ d(C, [["__scopeId", "data-v-4fa8abab"]]), w = [N, L];
 const B = s({ name: "LayFlex" }), _ = /* @__PURE__ */ Object.assign(B, {
   props: {
     inline: { type: Boolean, default: !1 },
@@ -92,7 +92,7 @@ const B = s({ name: "LayFlex" }), _ = /* @__PURE__ */ Object.assign(B, {
   setup(t) {
     const e = t, n = y(e, "autoSpan");
     m("autoSpan", n);
-    const l = $("autoSpan", !1), a = u(() => l.value ? 1 : e.span), d = u(() => ({
+    const l = $("autoSpan", !1), a = u(() => l.value ? 1 : e.span), g = u(() => ({
       [`lay-flex${e.inline ? "__inline" : ""}`]: !0,
       [`lay-flex-${a.value}`]: a.value,
       ["is-stretch"]: e.stretch,
@@ -104,12 +104,12 @@ const B = s({ name: "LayFlex" }), _ = /* @__PURE__ */ Object.assign(B, {
       [`align-self-${e.alignSelf}`]: e.alignSelf
     }));
     return (p, F) => (i(), c("div", {
-      class: r(o(d))
+      class: r(o(g))
     }, [
       f(p.$slots, "default", {}, void 0, !0)
     ], 2));
   }
-}), R = /* @__PURE__ */ g(_, [["__scopeId", "data-v-d4551140"]]), O = [R];
+}), R = /* @__PURE__ */ d(_, [["__scopeId", "data-v-926a9dd0"]]), O = [R];
 const k = [...w, ...O];
 function z(t) {
   k.forEach((e) => {

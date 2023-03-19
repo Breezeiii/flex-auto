@@ -1,1 +1,1 @@
-declare module "flex-container";
+declare module "flexiblay";

@@ -2,14 +2,12 @@
   "name": "flexiblay",
   "version": "1.0.0",
   "type": "module",
-  "description": "Vue3 + Css3 简易的数字动效组件，让数字跑起来吧，比德芙更丝滑",
+  "description": "Vue3 Components flex layout",
   "keywords": [
     "Vue3",
-    "Number",
-    "Animate",
-    "Roll",
-    "数字",
-    "数字动画"
+    "layout",
+    "flex",
+    "flexible"
   ],
   "author": "Breezeiii",
   "homepage": "https://breezeiii.github.io/flexiblay/#/",

@@ -14,7 +14,7 @@
       push && `lay-col-push-${push}`,
       order && `lay-col-order-${order}`,
 
-      align && `align-${align}`
+      align && `align-self-${align}`
     ]"
     :style="style"
   >
@@ -57,7 +57,8 @@ const style = computed(
 <style scoped lang="scss">
 @use "sass:math";
 
-@import "@lib/style/var.scss";
+@import "../style/var.scss";
+@import "../style/flex.scss";
 
 $namespace: lay-col;
 
@@ -87,13 +88,6 @@ $namespace: lay-col;
 }
 
 .#{$namespace} {
-  $align: (stretch, center, flex-start, flex-end, baseline);
-  @each $item in $align {
-    &.align-#{$item} {
-      align-self: $item;
-    }
-  }
-
   &[class*="#{lay-col}-"] {
     box-sizing: border-box;
   }

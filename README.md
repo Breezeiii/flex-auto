@@ -1,68 +1,73 @@
-# Numberoll 
+# flexiblay
 
 ```js
-npm i Numberoll -S
+npm i flexiblay -S
 ```
 
 #### 全局引入
 
 ```js
 import { createApp } from "vue";
-import Numberoll from "Numberoll";
-import "Numberoll/dist/style.css";
+import flexiblay from "flexiblay";
+import "flexiblay/dist/style.css";
 
-createApp(App).use(Numberoll ,{/* options */});
+createApp(App).use(flexiblay);
 ```
 
-#### options
-
-默认值，文档查看[numeral](http://numeraljs.com/)
-
-```json
-{
-      delimiters: {
-        thousands: ",",
-        decimal: "."
-      },
-      abbreviations: {
-        thousand: "千",
-        million: "百万",
-        billion: "十亿",
-        trillion: "兆"
-      },
-      ordinal: function () {
-        return ".";
-      },
-      currency: {
-        symbol: "¥"
-      }
-    }
-```
-
-
-
-#### 局部引入
+#### Container
 
 ```javascript
-import {Numberoll} from "Numberoll";
-import "Numberoll/dist/style.css";
-
-// 引入numeral，修改格式画样式
+// components
+<lay-flex></lay-flex>
+// props
+const props = defineProps({
+    inline: { type: Boolean, default: false }, //true:display:inline-flex
+    span: { type: [Number, String], default: null }, // flex-grow 的值
+    stretch: { type: Boolean, default: false }, // 宽高不受内容影响
+    column: { type: Boolean, default: false }, //  flex-direction:column
+    wrap: { type: Boolean, default: false }, // flex-wrap:wrap
+    // 对齐
+    justify: String, // justify-content
+    align: String, // align-items
+    alignContent: String, // align-content
+    alignSelf: String, // align-self
+  
+    autoSpan: { type: Boolean, default: false } // 父lay-flex设置true，直接子lay-flex均分
+  });
 ```
 
 
 
-#### Props
+#### layout - 栅格布局
 
-```js
+```javascript
+// components
+<lay-row></lay-row>
+// props
 const props = defineProps({
-  modelValue: { type: Number, default: 0 },
-  customValue: [String, Number, Array],
+  gutter: { type: Number, default: null }, // 间距
+  justify: String, // justify-content
+  align: String, // align-items
+  alignContent: String // align-content
+});
 
-  format: { type: String, default: "0,0" },
-  duration: { type: String, default: "0.25s" },
-  delay: String,
-  easing: { type: String, default: "linear" }
+// components
+<lay-col></lay-col>
+// props
+const props = defineProps({
+  span: { type: [Number, String], default: null }, // 份数
+  xs: { type: [Number, String], default: null }, >1920
+  sm: { type: [Number, String], default: null }, >1200
+  md: { type: [Number, String], default: null },>992
+  lg: { type: [Number, String], default: null }, >768
+  xl: { type: [Number, String], default: null }, <768
+
+  offset: { type: [Number, String], default: null },
+  pull: { type: [Number, String], default: null },
+  push: { type: [Number, String], default: null },
+  order: { type: [Number, String], default: null },
+
+  align: String // align-self
 });
 ```
 
@@ -71,23 +76,37 @@ const props = defineProps({
 #### Example
 
 ```vue
-/**
-* 内置numeral格式化插件，文档查看：http://numeraljs.com
-*/
-<numberoll v-model="num" format="0,0$" />
+<lay-row>
+    <lay-col
+    xl="3"
+    lg="4"
+    md="6"
+    sm="8"
+    xs="12"
+    v-for="item in 8"
+    :key="item"
+    >
+        <div class="grid-content">{{ item + 1 }}</div>
+    </lay-col>
+</lay-row>
 
-/**
-* custom 自由度极高，可以是：
-* 123*123
-* 我123|33
-* 你fjksdh234938
-* [1,2,'我','A']
-* 自己选择格式化工具，传递给Numberoll一个custom value，这样数字部分就会有滑动效果啦
-*/
-<numberoll :custom-value="customValue" />
+<lay-flex class="container" column auto-span>
+      <header style="line-height: 60px">header</header>
+      <lay-flex auto-span>
+        <aside>aside</aside>
+        <lay-flex column auto-span>
+          <lay-flex>container</lay-flex>
+          <footer>footer</footer>
+        </lay-flex>
+      </lay-flex>
+    </lay-flex>
 ```
 
 
 
-## [Homepage ](https://breezeiii.github.io/numberoll/#/)
+
+
+
+
+## [Example Homepage ](https://breezeiii.github.io/flexiblay/#/)
 
